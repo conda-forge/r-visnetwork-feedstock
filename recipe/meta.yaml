@@ -1,4 +1,4 @@
-{% set version = '1.0.3' %}
+{% set version = '2.0.3' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/visNetwork_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
-  sha256: 210e11a7364a69d158caf98fa39318a55ddcb6a3858d36f8ffdba86cb33e0373
+  sha256: bc2e75cf4cc1410d8eb528a38870666117e674f1b9ba5fa1ff769b8ab2e2462f
 
 build:
   number: 0
@@ -24,14 +24,14 @@ build:
 requirements:
   build:
     - r-base
-    - r-htmltools
     - r-htmlwidgets
+    - r-htmltools
     - r-jsonlite
     - r-magrittr
   run:
     - r-base
-    - r-htmltools
     - r-htmlwidgets
+    - r-htmltools
     - r-jsonlite
     - r-magrittr
 
