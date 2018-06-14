@@ -1,4 +1,4 @@
-{% set version = '2.0.3' %}
+{% set version = "2.0.4" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/visNetwork_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
-  sha256: bc2e75cf4cc1410d8eb528a38870666117e674f1b9ba5fa1ff769b8ab2e2462f
+  sha256: 0503408b195a812bcf589f8d34f5c3f9a38e92e78b699c3c7d737f7054d5ed15
 
 build:
   number: 0
