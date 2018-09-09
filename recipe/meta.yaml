@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = '2.0.4' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,34 +10,39 @@ package:
 source:
   fn: visNetwork_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/visNetwork_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/visNetwork_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
   sha256: 0503408b195a812bcf589f8d34f5c3f9a38e92e78b699c3c7d737f7054d5ed15
 
 build:
-  number: 0
-  skip: true  # [win32]
+  merge_build_host: True  # [win]
+  number: 1
+
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+
+  host:
     - r-base
-    - r-htmlwidgets
     - r-htmltools
+    - r-htmlwidgets
     - r-jsonlite
     - r-magrittr
+
   run:
     - r-base
-    - r-htmlwidgets
     - r-htmltools
+    - r-htmlwidgets
     - r-jsonlite
     - r-magrittr
 
 test:
   commands:
-    - $R -e "library('visNetwork')"  # [not win]
+    - $R -e "library('visNetwork')"           # [not win]
     - "\"%R%\" -e \"library('visNetwork')\""  # [win]
 
 about:
@@ -46,8 +51,14 @@ about:
   summary: Provides an R interface to the 'vis.js' JavaScript charting library. It allows an
     interactive visualization of networks.
   license_family: MIT
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\MIT'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
