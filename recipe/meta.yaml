@@ -1,4 +1,4 @@
-{% set version = '2.0.4' %}
+{% set version = "2.0.5" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,12 +12,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/visNetwork_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
-  sha256: 0503408b195a812bcf589f8d34f5c3f9a38e92e78b699c3c7d737f7054d5ed15
+  sha256: 1f57aaca06d426f4ec8d3f0f678696a2793a830f86d2a97a59de755b767b0de0
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
 
   rpaths:
     - lib/R/lib/
