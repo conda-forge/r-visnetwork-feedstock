@@ -1,4 +1,4 @@
-{% set version = "2.0.9" %}
+{% set version = "2.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/visNetwork_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
-  sha256: 5e0b3dc3a91e66e0a359433f03cc856d04b981b0f9ad228d8fa9c96b7fcaa420
+  sha256: a2b91e7fbbd9d08a9929a5b2c891d9c0bca5977ad772fa37510d96656af1152f
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -44,11 +44,10 @@ test:
 about:
   home: https://datastorm-open.github.io/visNetwork/
   license: MIT
-  summary: Provides an R interface to the 'vis.js' JavaScript charting library. It allows an
-    interactive visualization of networks.
+  summary: Provides an R interface to the 'vis.js' JavaScript charting library. It allows an interactive visualization of networks.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
