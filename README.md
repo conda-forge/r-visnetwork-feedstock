@@ -1,11 +1,11 @@
-About r-visnetwork
-==================
+About r-visnetwork-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-visnetwork-feedstock/blob/main/LICENSE.txt)
 
 Home: https://datastorm-open.github.io/visNetwork/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-visnetwork-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides an R interface to the 'vis.js' JavaScript charting library. It allows an interactive visualization of networks.
 
