@@ -1,4 +1,4 @@
-{% set version = "2.1.2" %}
+{% set version = "2.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/visNetwork_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz
-  sha256: 47c99d42fc89e6ae929257b2648d998c5ffed60dff97ad7e47613f5a0c1ddc84
+  sha256: 483794988dd808424f5457e510e3de212519b690da281f70b14aaf63038963da
 
 build:
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
